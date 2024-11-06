@@ -4,7 +4,7 @@
 // Abbellire con CSS o Bootstrap
 // Inserire un bottone che al click faccia il fetch per altre 10 mail (sostituendo le altre)
 
-const emailsArray = [];
+let emailsArray = [];
 
 for (i = 0; i < 10; i++) {
   fetch(`https://flynn.boolean.careers/exercises/api/random/mail`)
