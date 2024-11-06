@@ -12,23 +12,35 @@ let emailsArray = [];
 const EmailsListEL = document.getElementById("emails-list");
 // console.log(EmailsListEL);
 
-for (i = 0; i < 10; i++) {
-  fetch(`https://flynn.boolean.careers/exercises/api/random/mail`)
-    .then((response) => response.json())
-    .then((data) => {
-      const emailItems = data.response;
-      emailsArray.push(emailItems);
+const generateEmails = () => {
+  for (i = 0; i < 10; i++) {
+    fetch(`https://flynn.boolean.careers/exercises/api/random/mail`)
+      .then((response) => response.json())
+      .then((data) => {
+        const emailItems = data.response;
+        emailsArray.push(emailItems);
 
-      const li = document.createElement("li");
-      li.classList.add("list-group-item");
-      li.textContent = emailItems;
-      EmailsListEL.appendChild(li);
-    });
-}
+        const li = document.createElement("li");
+        li.classList.add("list-group-item");
+        li.textContent = emailItems;
+        EmailsListEL.appendChild(li);
+      });
+  }
+};
 
+generateEmails();
 console.log(emailsArray);
 
-// //# PROVA
+//# BOTTONE
+
+const button = document.getElementById("btn");
+
+button.addEventListener("click", () => {
+  EmailsListEL.innerHTML = "";
+  generateEmails();
+});
+
+// //# PROVA FOREACH
 // let arrayprova = [`abc`, `abc`, `abc`];
 // console.log(arrayprova);
 
@@ -38,3 +50,19 @@ console.log(emailsArray);
 //   EmailsListEL.appendChild(li);
 //   console.log(prova);
 // });
+
+//# CICLO FOR + FETCH
+
+// for (i = 0; i < 10; i++) {
+//   fetch(`https://flynn.boolean.careers/exercises/api/random/mail`)
+//     .then((response) => response.json())
+//     .then((data) => {
+//       const emailItems = data.response;
+//       emailsArray.push(emailItems);
+
+//       const li = document.createElement("li");
+//       li.classList.add("list-group-item");
+//       li.textContent = emailItems;
+//       EmailsListEL.appendChild(li);
+//     });
+// }
