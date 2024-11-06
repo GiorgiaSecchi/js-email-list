@@ -4,7 +4,7 @@
 // Abbellire con CSS o Bootstrap
 // Inserire un bottone che al click faccia il fetch per altre 10 mail (sostituendo le altre)
 
-let emailsArray = [];
+const emailsArray = [];
 
 for (i = 0; i < 10; i++) {
   fetch(`https://flynn.boolean.careers/exercises/api/random/mail`)
@@ -17,3 +17,13 @@ for (i = 0; i < 10; i++) {
 }
 
 console.log(emailsArray);
+
+const EmailsListEL = document.getElementById("emails-list");
+// console.log(EmailsListEL);
+
+emailsArray.forEach((email) => {
+  //   const li = document.createElement("li");
+  //   li.textContent = email;
+  //   EmailsListEL.appendChild(li);
+  console.log(email);
+});
