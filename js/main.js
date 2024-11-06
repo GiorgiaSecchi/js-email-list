@@ -22,8 +22,19 @@ const EmailsListEL = document.getElementById("emails-list");
 // console.log(EmailsListEL);
 
 emailsArray.forEach((email) => {
-  //   const li = document.createElement("li");
-  //   li.textContent = email;
-  //   EmailsListEL.appendChild(li);
+  const li = document.createElement("li");
+  li.textContent = email;
+  EmailsListEL.appendChild(li);
   console.log(email);
+});
+
+//#prova
+let arrayprova = [`abc`, `abc`, `abc`];
+console.log(arrayprova);
+
+arrayprova.forEach((prova) => {
+  const li = document.createElement("li");
+  li.textContent = prova;
+  EmailsListEL.appendChild(li);
+  console.log(prova);
 });
